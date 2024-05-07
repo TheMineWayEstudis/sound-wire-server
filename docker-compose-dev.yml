@@ -13,4 +13,5 @@ services:
       - .env
     volumes:
       - .:/app
+      - ./downloads:/downloads
     command: ["npm", "run", "start:dev"]
