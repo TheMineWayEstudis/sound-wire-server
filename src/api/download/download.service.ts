@@ -8,7 +8,7 @@ export class DownloadService {
   async downloadByUrl(url: string, response: Response) {
     await new Promise<void>((resolve) => {
       ytdl(url, {
-        filter: (format) => format.container === 'mp4',
+        filter: 'audioonly',
       })
         .pipe(response)
         .on('finish', () => resolve());
